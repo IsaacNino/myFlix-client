@@ -13,20 +13,20 @@ export const MainView = () => { // MainView component
             .then((data) => { //stores the data in a state
                 
                 //maps over the list
-                const moviesFromApi = data.map((movies) => { //maps over the list
+                const moviesFromApi = data.map((movie) => { //maps over the list
                 
                 //returns a list of objects with the properties listed below
                 return {
-                    _id: movies._id, //movie._id prop
-                    Title: movies.Title, //movie.Title prop
-                    Description: movies.Description, //movie.Description prop
-                    Genre: movies.Genre, //movie.Genre prop
+                    _id: movie._id, //movie._id prop
+                    Title: movie.Title, //movie.Title prop
+                    Description: movie.Description, //movie.Description prop
+                    Genre: movie.Genre, //movie.Genre prop
                     Director: { //movie.Director prop
-                        Name: movies.Director.Name, //movie.Director.Name prop
-                        Bio: movies.Director.Bio, //movie.Director.Bio prop
+                        Name: movie.Director.Name, //movie.Director.Name prop
+                        Bio: movie.Director.Bio, //movie.Director.Bio prop
                     },
-                    ImagePath: movies.ImagePath, //movie.ImagePath prop
-                    Featured: movies.Featured //movie.Featured prop
+                    ImagePath: movie.ImagePath, //movie.ImagePath prop
+                    Featured: movie.Featured //movie.Featured prop
                 };
                 })
                 setMovies(moviesFromApi); //sets the state of the list of movies

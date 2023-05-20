@@ -27293,19 +27293,19 @@ const MainView = ()=>{
         .then((response)=>response.json()) //converts the response to JSON format
         .then((data)=>{
             //maps over the list
-            const moviesFromApi = data.map((movies)=>{
+            const moviesFromApi = data.map((movie)=>{
                 //returns a list of objects with the properties listed below
                 return {
-                    _id: movies._id,
-                    Title: movies.Title,
-                    Description: movies.Description,
-                    Genre: movies.Genre,
+                    _id: movie._id,
+                    Title: movie.Title,
+                    Description: movie.Description,
+                    Genre: movie.Genre,
                     Director: {
-                        Name: movies.Director.Name,
-                        Bio: movies.Director.Bio
+                        Name: movie.Director.Name,
+                        Bio: movie.Director.Bio
                     },
-                    ImagePath: movies.ImagePath,
-                    Featured: movies.Featured //movie.Featured prop
+                    ImagePath: movie.ImagePath,
+                    Featured: movie.Featured //movie.Featured prop
                 };
             });
             setMovies(moviesFromApi); //sets the state of the list of movies

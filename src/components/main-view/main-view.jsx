@@ -13,7 +13,7 @@ export const MainView = () => { // MainView component
             .then((data) => { //stores the data in a state
                 
                 //maps over the list
-                const moviesFromApi = data.map((doc) => { //maps over the list
+                const moviesFromApi = data.map((movies) => { //maps over the list
                 
                 //returns a list of objects with the properties listed below
                 return {

@@ -27299,7 +27299,10 @@ const MainView = ()=>{
                     _id: movie._id,
                     Title: movie.Title,
                     Description: movie.Description,
-                    Genre: movie.Genre,
+                    Genre: {
+                        Name: movie.Genre.Name,
+                        Description: movie.Genre.Description //movie.Genre.Description prop
+                    },
                     Director: {
                         Name: movie.Director.Name,
                         Bio: movie.Director.Bio
@@ -27318,7 +27321,7 @@ const MainView = ()=>{
         onBackClick: ()=>setSelectedMovie(null) //setSelectedMovie prop
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 40,
+        lineNumber: 43,
         columnNumber: 16
     }, undefined); //If the selected movie is true, returns the MovieView component
     if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27326,7 +27329,7 @@ const MainView = ()=>{
         children: "The list is empty!"
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 47,
+        lineNumber: 50,
         columnNumber: 16
     }, undefined); //If the list of movies is empty, returns this message
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27338,13 +27341,13 @@ const MainView = ()=>{
                 }
             }, movie.id, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 52,
+                lineNumber: 55,
                 columnNumber: 24
             }, undefined);
         })
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 50,
+        lineNumber: 53,
         columnNumber: 9
     }, undefined);
 };

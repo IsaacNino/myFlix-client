@@ -20,7 +20,10 @@ export const MainView = () => { // MainView component
                     _id: movie._id, //movie._id prop
                     Title: movie.Title, //movie.Title prop
                     Description: movie.Description, //movie.Description prop
-                    Genre: movie.Genre, //movie.Genre prop
+                    Genre: {
+                        Name: movie.Genre.Name, //movie.Genre.Name prop
+                        Description: movie.Genre.Description //movie.Genre.Description prop
+                    },
                     Director: { //movie.Director prop
                         Name: movie.Director.Name, //movie.Director.Name prop
                         Bio: movie.Director.Bio, //movie.Director.Bio prop

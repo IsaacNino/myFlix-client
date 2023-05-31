@@ -18,6 +18,7 @@ export const SignupView = () => { //exporting signup-view component
 
         fetch ("https://themovieapi.herokuapp.com/users", { //fetch request
             method: "POST", //POST request
+            body: JSON.stringify(data), //JSON stringified data
             headers: {
                 "Content-Type": "application/json" //content type
             }

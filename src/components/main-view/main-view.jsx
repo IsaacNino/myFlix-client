@@ -64,7 +64,7 @@ export const MainView = () => { // MainView component
                     setToken(token); //setToken prop
                 }} />
                 or
-                <SignUpView />
+                <SignupView />
             </>
         );
     }

@@ -1,4 +1,5 @@
-import React from "react"; //importing react
+
+import { useState } from 'react'; //useState hook
 
 export const LoginView = ({ onLoggedIn }) => { //exporting login-view component
     const [username, setUsername] = useState(""); //useState hook to store the state of the username    
@@ -22,7 +23,7 @@ export const LoginView = ({ onLoggedIn }) => { //exporting login-view component
         }) 
         .then((response) => response.json())
         .then((data) => {
-            console.log(data.user, data.token); //logs the user and token
+            console.log("Login Response: ", data); //logs the response
             if (data.user) { //if the user is true, calls the onLoggedIn function
                 localStorage.setItem("user", json.stringify(data.user)); //stores the user in localStorage
                 localStorage.setItem("token", data.token); //stores the token in localStorage

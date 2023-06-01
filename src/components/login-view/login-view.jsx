@@ -1,5 +1,6 @@
-
 import { useState } from 'react'; //useState hook
+import { Form, Button } from 'react-bootstrap'; //importing Form and Button from react-bootstrap
+
 
 export const LoginView = ({ onLoggedIn }) => { //exporting login-view component
     const [username, setUsername] = useState(""); //useState hook to store the state of the username    
@@ -59,9 +60,9 @@ export const LoginView = ({ onLoggedIn }) => { //exporting login-view component
                 required //required field
                 />
             </label>
-            <button type="submit">
+            <Button type="submit">
                 Submit
-            </button>
+            </Button>
         </Form>
     );
 };

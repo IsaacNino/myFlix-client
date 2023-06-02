@@ -26,7 +26,7 @@ export const SignupView = () => { //exporting signup-view component
         }).then((response) => { //then response
             if (response.ok) { //if response is ok
                 alert("Signup successful"); //alert
-                window.location.relaod(); //reloads the page
+                window.location.reload(); //reloads the page
             } else { //else
                 alert("Signup failed"); //alert
             }
@@ -35,7 +35,7 @@ export const SignupView = () => { //exporting signup-view component
 
 
     return (
-        <Form onSubmit= {handleSubmit}> ////onSubmit event handler
+        <Form onSubmit= {handleSubmit}>
             <label>
                 Username:
                 <input

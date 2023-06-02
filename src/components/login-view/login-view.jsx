@@ -26,7 +26,7 @@ export const LoginView = ({ onLoggedIn }) => { //exporting login-view component
         .then((data) => {
             console.log("Login Response: ", data); //logs the response
             if (data.user) { //if the user is true, calls the onLoggedIn function
-                localStorage.setItem("user", json.stringify(data.user)); //stores the user in localStorage
+                localStorage.setItem("user", JSON.stringify(data.user)); //stores the user in localStorage
                 localStorage.setItem("token", data.token); //stores the token in localStorage
                 onLoggedIn(data.user, data.token); //onLoggedIn prop
             } else {

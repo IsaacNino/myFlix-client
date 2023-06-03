@@ -27186,27 +27186,26 @@ const MainView = ()=>{
             } //passes the token to the API call
         }).then((response)=>response.json()) //converts the response to JSON format
         .then((data)=>{
-            console.log(data); //logs the data
             //maps over the list
-            const moviesFromApi = data.map((movie)=>{
+            const moviesFromApi = data.map((movies)=>{
                 //returns a list of objects with the properties listed below
                 return {
-                    _id: movie._id,
-                    Title: movie.Title,
-                    Description: movie.Description,
+                    _id: movies._id,
+                    Title: movies.Title,
+                    Description: movies.Description,
                     Genre: {
-                        Name: movie.Genre.Name,
-                        Description: movie.Genre.Description //movie.Genre.Description prop
+                        Name: movies.Genre.Name,
+                        Description: movies.Genre.Description //movie.Genre.Description prop
                     },
                     Director: {
-                        Name: movie.Director.Name,
-                        Bio: movie.Director.Bio
+                        Name: movies.Director.Name,
+                        Bio: movies.Director.Bio
                     },
-                    ImagePath: movie.ImagePath,
-                    Featured: movie.Featured //movie.Featured prop
+                    ImagePath: movies.ImagePath,
+                    Featured: movies.Featured //movie.Featured prop
                 };
             });
-            setMovies(movies); //setMovies prop
+            setMovies(moviesFromApi); //setMovies prop
         }).catch((error)=>{
             console.log("Error retrieving movies:", error); //logs any errors
         });
@@ -27222,13 +27221,13 @@ const MainView = ()=>{
                 }
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 57,
+                lineNumber: 56,
                 columnNumber: 17
             }, undefined),
             "or",
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupView.SignupView), {}, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 62,
+                lineNumber: 61,
                 columnNumber: 17
             }, undefined)
         ]
@@ -27238,7 +27237,7 @@ const MainView = ()=>{
         onBackClick: ()=>setSelectedMovie(null) //setSelectedMovie prop
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 68,
+        lineNumber: 67,
         columnNumber: 16
     }, undefined); //If the selected movie is true, returns the MovieView component
     if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27246,7 +27245,7 @@ const MainView = ()=>{
         children: "The list is empty!"
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 75,
+        lineNumber: 74,
         columnNumber: 16
     }, undefined); //If the list of movies is empty, returns this message
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27260,7 +27259,7 @@ const MainView = ()=>{
                 children: "Logout"
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 80,
+                lineNumber: 79,
                 columnNumber: 13
             }, undefined),
             movies.map((movie)=>{
@@ -27271,14 +27270,14 @@ const MainView = ()=>{
                     }
                 }, movie.id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 89,
+                    lineNumber: 88,
                     columnNumber: 24
                 }, undefined);
             })
         ]
     }, void 0, true, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 79,
+        lineNumber: 78,
         columnNumber: 9
     }, undefined);
 };

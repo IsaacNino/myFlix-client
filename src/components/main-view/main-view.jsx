@@ -20,7 +20,7 @@ export const MainView = () => { // MainView component
             headers: { Authorization: 'Bearer ${token}' }//passes the token to the API call
         })
             .then((response) => response.json()) //converts the response to JSON format
-            .then((movies) => { 
+            .then((data) => { 
                 console.log(data); //logs the data
                 
                 //maps over the list

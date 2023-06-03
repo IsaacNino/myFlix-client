@@ -13,13 +13,8 @@ export const MainView = () => { // MainView component
     const [token, setToken] = useState(storedToken? storedToken : null); //useState hook to store the state of the token
 
     useEffect(() => { //useEffect hook to retrieve the list of movies when the component is mounted
-        if (!token) { //if the token is false, returns
+        if (!token) //if the token is false, returns
             return;
-
-            fetch('https://themovieapi.herokuapp.com/movies', { //fetches the list of movies from the API
-                headers: { Authorization: 'Bearer ${token}' } //passes the token to the API call
-            })
-        }
         
         fetch('https://themovieapi.herokuapp.com/movies', { //fetches the list of movies from the API
             headers: { Authorization: 'Bearer ${token}' }//passes the token to the API call

@@ -21,7 +21,6 @@ export const MainView = () => { // MainView component
         })
             .then((response) => response.json()) //converts the response to JSON format
             .then((data) => { 
-                console.log(data); //logs the data
                 
                 //maps over the list
                 const moviesFromApi = data.map((movie) => { //maps over the list
@@ -44,7 +43,7 @@ export const MainView = () => { // MainView component
                 };
                 });
                 
-                setMovies(movies); //setMovies prop
+                setMovies(moviesFromApi); //setMovies prop
             })
             .catch((error) => { //logs any errors
                 console.log('Error retrieving movies:', error); //logs any errors

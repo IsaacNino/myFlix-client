@@ -23,23 +23,23 @@ export const MainView = () => { // MainView component
             .then((data) => { 
                 
                 //maps over the list
-                const moviesFromApi = data.map((movie) => { //maps over the list
+                const moviesFromApi = data.map((movies) => { //maps over the list
                 
                 //returns a list of objects with the properties listed below
                 return {
-                    _id: movie._id, //movie._id prop
-                    Title: movie.Title, //movie.Title prop
-                    Description: movie.Description, //movie.Description prop
+                    _id: movies._id, //movie._id prop
+                    Title: movies.Title, //movie.Title prop
+                    Description: movies.Description, //movie.Description prop
                     Genre: {
-                        Name: movie.Genre.Name, //movie.Genre.Name prop
-                        Description: movie.Genre.Description //movie.Genre.Description prop
+                        Name: movies.Genre.Name, //movie.Genre.Name prop
+                        Description: movies.Genre.Description //movie.Genre.Description prop
                     },
                     Director: { //movie.Director prop
-                        Name: movie.Director.Name, //movie.Director.Name prop
-                        Bio: movie.Director.Bio, //movie.Director.Bio prop
+                        Name: movies.Director.Name, //movie.Director.Name prop
+                        Bio: movies.Director.Bio, //movie.Director.Bio prop
                     },
-                    ImagePath: movie.ImagePath, //movie.ImagePath prop
-                    Featured: movie.Featured //movie.Featured prop
+                    ImagePath: movies.ImagePath, //movie.ImagePath prop
+                    Featured: movies.Featured //movie.Featured prop
                 };
                 });
                 

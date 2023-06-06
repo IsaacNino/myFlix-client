@@ -16,7 +16,7 @@ export const MainView = () => { // MainView component
         if (!token) //if the token is false, returns
             return;
         
-        fetch('https://themovieapi.herokuapp.com/movies', { //fetches the list of movies from the API
+        fetch("https://themovieapi.herokuapp.com/movies", { //fetches the list of movies from the API
             headers: { Authorization: 'Bearer ${token}' }//passes the token to the API call
         })
             .then((response) => response.json()) //converts the response to JSON format

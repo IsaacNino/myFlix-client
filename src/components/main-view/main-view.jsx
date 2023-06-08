@@ -19,7 +19,14 @@ export const MainView = () => { // MainView component
         fetch("https://themovieapi.herokuapp.com/movies", { //fetches the list of movies from the API
             headers: { Authorization: 'Bearer ${token}' }//passes the token to the API call
         })
-            .then((response) => response.json()) //converts the response to JSON format
+            .then((response) => { 
+                if ( response.ok ) { 
+                    return response.json(); //returns the response as JSON if the response is ok
+                }
+                else {
+                    throw Error(response.statusText); //throws an error if the response is not ok
+                }
+            }) //converts the response to JSON format
             .then((data) => { 
                 
                 //maps over the list

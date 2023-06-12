@@ -17,7 +17,7 @@ export const MainView = () => { // MainView component
             return;
         
         fetch("https://themovieapi.herokuapp.com/movies", { //fetches the list of movies from the API
-            headers: { Authorization: 'Bearer ${token}' }//passes the token to the API call
+            headers: { Authorization: `Bearer ${token}` }//passes the token to the API call
         })
             .then((response) => { 
                 if ( response.ok ) { 

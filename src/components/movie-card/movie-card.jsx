@@ -18,7 +18,7 @@ MovieCard.propTypes = {
         _id: PropTypes.string.isRequired, //id of movie in string format
         Title: PropTypes.string.isRequired, //title of movie in string format
         Description: PropTypes.string.isRequired, //description of movie in string format
-        Genre: PropTypes.string.isRequired, //genre of movie in string format
+        Genre: PropTypes.string.isRequired, //genre of movie in string format [NEEDT TO MAP THIS]
         Director: PropTypes.string.isRequired, //director of movie in object format
         ImagePath: PropTypes.string.isRequired, //image path of movie in string format
         Featured: PropTypes.bool.isRequired //featured status of movie in boolean format

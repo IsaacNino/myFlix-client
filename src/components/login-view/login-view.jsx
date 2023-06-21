@@ -46,8 +46,8 @@ export const LoginView = ({ onLoggedIn }) => { //exporting login-view component
                 type="text" 
                 value={username} //value prop
                 onChange={(e)=> setUsername(e.target.value)} //onChange event handler
-                minlength="5" //minimum length of 5 characters
-                maxlength="15" //maximum length of 15 characters
+                minLength="5" //minimum length of 5 characters
+                maxLength="15" //maximum length of 15 characters
                 required //required field
             />
             </label>

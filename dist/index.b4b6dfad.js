@@ -28447,9 +28447,9 @@ const LoginView = ({ onLoggedIn  })=>{
                         type: "text",
                         value: username,
                         onChange: (e)=>setUsername(e.target.value),
-                        minlength: "5" //minimum length of 5 characters
+                        minLength: "5" //minimum length of 5 characters
                         ,
-                        maxlength: "15" //maximum length of 15 characters
+                        maxLength: "15" //maximum length of 15 characters
                         ,
                         required: true
                     }, void 0, false, {

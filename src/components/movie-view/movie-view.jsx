@@ -1,8 +1,13 @@
+import "./movie-view.scss"; //import statement for movie-view.scss file
+
 export const MovieView = ({ movie, onBackClick }) => { // MovieView component
     return (
         <div>
             <div>
-                <img src={movie.ImagePath} />
+                <img 
+                    className="w-100"
+                    src={movie.ImagePath}
+                />
             </div>
             <div>
                 <span>Title: </span>
@@ -20,7 +25,7 @@ export const MovieView = ({ movie, onBackClick }) => { // MovieView component
                 <span>Director: </span>
                 <span>{movie.Director.Name}</span>
             </div>
-            <button onClick={onBackClick}>Back</button> 
+            <button onClick={onBackClick} className="back-button">Back</button> 
         </div>
     );
 };

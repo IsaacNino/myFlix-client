@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react'; // Import statement for useState
 import { MovieCard } from '../movie-card/movie-card'; // Import statement for MovieCard
 import { MovieView } from '../movie-view/movie-view'; // Import statement for MovieView
+import Row from "react-bootstrap/Row"; // Import statement for Row from react-bootstrap
+import { LoginView } from '../login-view/login-view';
+import { SignupView } from '../signup-view/signup-view';
+import Col from "react-bootstrap/Col"; // Import statement for Col from react-bootstrap
 
 export const MainView = () => { // MainView component
     const [movies, setMovies] = useState([]); //useState hook to store the state of the list of movies
@@ -39,27 +43,37 @@ export const MainView = () => { // MainView component
             });
     }, []);
 
-    if (selectedMovie) {
-        return <MovieView movie={selectedMovie} onBackClick={() => //If the selected movie is true, returns the MovieView component
-            setSelectedMovie(null) //setSelectedMovie prop
-            }
-        />; //If the selected movie is true, returns the MovieView component
-    }
-
-    if (movies.length === 0) { //If the list of movies is empty, returns this message
-        return <div className='main-view'>The list is empty!</div>; //If the list of movies is empty, returns this message
-    }
-    return (//Returns the list of movies
-        <div>
-            {movies.map((movie) => { //Maps over the list of movies
-                return <MovieCard 
-                key={movie.id} //Key prop
-                movie={movie} //Movie prop
-                onMovieClick={(newSelectedMovie) => { //onMovieClick prop
-                    setSelectedMovie(newSelectedMovie); //setSelectedMovie prop
-                }}
-                />;
-            })}
-        </div>
+    return (
+        <Row className="justify-content-md-center">
+            {!user ? (
+                <Col md={5}>
+                <LoginView onLoggedIn={(user) => setUser(user)} />
+                or
+                <SignupView />
+                </Col>
+            ) : selectedMovie ? (
+                <Col md={8}>
+                <MovieView
+                    movie={selectedMovie}
+                    onBackClick={() => setSelectedMovie(null)}
+                />
+                </Col>
+            ) : movies.length === 0 ? (
+                <div>The list is empty!</div>
+            ) : (
+                <>
+                    {movies.map((movie) => (
+                        <Col className="mb-5" key={movie.id} md={3}>
+                            <MovieCard
+                                movie={movie}
+                                onMovieClick={(newSelectedMovie) => {
+                                    setSelectedMovie(newSelectedMovie);
+                                }}
+                            />
+                        </Col>
+                    ))}
+                </>
+            )}
+        </Row>
     );
 };

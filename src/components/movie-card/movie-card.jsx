@@ -6,7 +6,7 @@ import './movie-card.scss'; //import statement for movie-card.scss file
 export const MovieCard = ({ movie, onMovieClick }) => { //MovieCard component
     return (
         <Card  className="h-100" onClick={() => onMovieClick(movie)}>
-            <Card.Img variant="top" src={movie.ImagePath} /> 
+            <Card.Img className="movie-card" variant="top" src={movie.ImagePath} /> 
             <Card.Body>
                 <Card.Title>{movie.Title}</Card.Title>
                 <Card.Text>{movie.Description}</Card.Text>

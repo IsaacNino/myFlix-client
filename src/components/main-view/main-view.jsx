@@ -8,8 +8,8 @@ import Col from "react-bootstrap/Col"; // Import statement for Col from react-bo
 
 export const MainView = () => { // MainView component
     const [movies, setMovies] = useState([]); //useState hook to store the state of the list of movies
-
     const [selectedMovie, setSelectedMovie] = useState(null); //useState hook to store the state of the selected movie
+    const [user, setUser] = useState(null); //useState hook to store the state of the user
 
     useEffect(() => { //useEffect hook to retrieve the list of movies when the component is mounted
         fetch('https://themovieapi.herokuapp.com/movies') //fetches the list of movies from the API

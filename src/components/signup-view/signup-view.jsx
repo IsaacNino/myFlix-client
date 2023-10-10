@@ -1,5 +1,6 @@
 import{ useState } from 'react'; //importing useState
-import { Form, Button } from 'react-bootstrap'; //importing Form and Button from react-bootstrap
+import PropTypes from 'prop-types'; //importing PropTypes
+import { Form, Button, CardGroup, Col, Row, Container, Card } from 'react-bootstrap'; //importing Form and Button from react-bootstrap
 
 export const SignupView = () => { //exporting signup-view component
     const [username, setUsername] = useState(""); //useState hook to store the state of the username
@@ -35,57 +36,72 @@ export const SignupView = () => { //exporting signup-view component
 
 
     return (
-        <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formUsername">
-                <Form.Label>Username:</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder="Enter username"
-                    value={username} //value prop
-                    onChange={(e) => setUsername(e.target.value)} //onChange event handler
-                    required //required field
-                    minLength="5" //minimum length of 5 characters
-                    maxLength="15" //maximum length of 15 characters
-                />
-            </Form.Group>
+        <Container>
+            <Row className="justify-content-md-center">
+                <Col md={5}>
+                    <CardGroup>
+                        <Card className="mb-5">
+                            <Card.Body>
+                                <Card.Title>
+                                    Please Create Your Account:
+                                </Card.Title> 
+                                <Form onSubmit={handleSubmit}>
+                                    <Form.Group controlId="formUsername">
+                                        <Form.Label>Username:</Form.Label>
+                                        <Form.Control
+                                            type="text"
+                                            placeholder="Enter username"
+                                            value={username} //value prop
+                                            onChange={(e) => setUsername(e.target.value)} //onChange event handler
+                                            required //required field
+                                            minLength="5" //minimum length of 5 characters
+                                            maxLength="15" //maximum length of 15 characters
+                                        />
+                                    </Form.Group>
 
-            <Form.Group controlId="formPassword">
-                <Form.Label>Password:</Form.Label>
-                <Form.Control
-                    type="password"
-                    placeholder="Enter password"
-                    value={password} //value prop
-                    onChange={(e) => setPassword(e.target.value)} //onChange event handler
-                    required //required field
-                    minLength="5" //minimum length of 5 characters
-                    maxLength="15" //maximum length of 15 characters
-                />
-            </Form.Group>
+                                    <Form.Group controlId="formPassword">
+                                        <Form.Label>Password:</Form.Label>
+                                        <Form.Control
+                                            type="password"
+                                            placeholder="Create password"
+                                            value={password} //value prop
+                                            onChange={(e) => setPassword(e.target.value)} //onChange event handler
+                                            required //required field
+                                            minLength="5" //minimum length of 5 characters
+                                            maxLength="15" //maximum length of 15 characters
+                                        />
+                                    </Form.Group>
 
-            <Form.Group controlId="formEmail">
-                <Form.Label>Email:</Form.Label>
-                <Form.Control
-                    type="email"
-                    placeholder="Enter email"
-                    value={email} //value prop
-                    onChange={(e) => setEmail(e.target.value)} //onChange event handler
-                    required //required field
-                />
-            </Form.Group>
+                                    <Form.Group controlId="formEmail">
+                                        <Form.Label>Email:</Form.Label>
+                                        <Form.Control
+                                            type="email"
+                                            placeholder="Enter your email address"
+                                            value={email} //value prop
+                                            onChange={(e) => setEmail(e.target.value)} //onChange event handler
+                                            required //required field
+                                        />
+                                    </Form.Group>
 
-            <Form.Group controlId="formBirthday">
-                <Form.Label>Birthday:</Form.Label>
-                <Form.Control
-                    type="date"
-                    placeholder="Enter birthday"
-                    value={birthday} //value prop
-                    onChange={(e) => setBirthday(e.target.value)} //onChange event handler
-                    required //required field
-                />
-            </Form.Group>
-            <Button variant="primary" type="submit">
-                Submit
-            </Button>
-        </Form>
+                                    <Form.Group controlId="formBirthday">
+                                        <Form.Label>Birthday:</Form.Label>
+                                        <Form.Control
+                                            type="date"
+                                            placeholder="Enter your birthday"
+                                            value={birthday} //value prop
+                                            onChange={(e) => setBirthday(e.target.value)} //onChange event handler
+                                            required //required field
+                                        />
+                                    </Form.Group>
+                                    <Button variant="primary" type="submit">
+                                        Submit
+                                    </Button>
+                                </Form>
+                            </Card.Body>
+                        </Card>
+                    </CardGroup>
+                </Col>
+            </Row>
+        </Container>
     );
-};
+}

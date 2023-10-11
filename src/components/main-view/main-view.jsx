@@ -48,7 +48,7 @@ export const MainView = () => { // MainView component
             {!user ? (
                 <Col md={5}>
                 <LoginView onLoggedIn={(user) => setUser(user)} />
-                or
+                <br />
                 <SignupView />
                 </Col>
             ) : selectedMovie ? (
